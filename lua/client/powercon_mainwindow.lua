@@ -26,6 +26,4 @@ local submit = vgui.Create('DButton', bottomPanel)
 enterField:Dock(RIGHT)
 enterField:SetSize(30, 30)
 
-
-
 mainwindow:MakePopup()

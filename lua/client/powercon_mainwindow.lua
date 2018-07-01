@@ -1,4 +1,5 @@
 include 'powercon_text_area.lua'
+include 'powercon_submit_button.lua'
 
 local BGCOLOR = Color(0, 0, 0, 150)
 local CORNER_RADIUS = 4
@@ -15,15 +16,18 @@ end
 local textarea = vgui.Create('PCTextArea', mainwindow)
 textarea:Dock(FILL)
 
-local bottomPanel = vgui.Create('DPanel', mainwindow)
+local bottomPanel = vgui.Create('Panel', mainwindow)
 bottomPanel:Dock(BOTTOM)
+bottomPanel:SetHeight(40)
 
 local enterField = vgui.Create('PCTextArea', bottomPanel)
-enterField:Dock(LEFT)
+enterField:Dock(FILL)
 enterField:SetHeight(22)
+enterField.textPaddingX = 3
+enterField.textPaddingY = 4
 
-local submit = vgui.Create('DButton', bottomPanel)
-enterField:Dock(RIGHT)
-enterField:SetSize(30, 30)
+local submit = vgui.Create('PCSubmitButton', bottomPanel)
+submit:Dock(RIGHT)
+submit:SetSize(30, 30)
 
 mainwindow:MakePopup()

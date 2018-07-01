@@ -15,6 +15,9 @@ end
 
 local textarea = vgui.Create('PCTextArea', mainwindow)
 textarea:Dock(FILL)
+textarea:SetText(PowerCon_consoleLog)
+MsgN(PowerCon_consoleLog)
+table.insert(PowerCon_logTextAreas, textarea)
 
 local bottomPanel = vgui.Create('Panel', mainwindow)
 bottomPanel:Dock(BOTTOM)
